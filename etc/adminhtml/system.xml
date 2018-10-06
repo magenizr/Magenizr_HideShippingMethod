@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magenizr HideShippingMethod
+ *
+ * @category    Magenizr
+ * @package     Magenizr_HideShippingMethod
+ * @copyright   Copyright (c) 2018 Magenizr (https://www.magenizr.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="checkout" translate="label" type="text" sortOrder="305" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Checkout</label>
+            <tab>sales</tab>
+            <resource>Magenizr_HideShippingMethod::config_hideshippingmethod</resource>
+            <group id="magenizr_hideshippingmethod" translate="label" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+
+                <label>Hide Shipping Method</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Disable the module temporarily.]]></comment>
+                </field>
+
+                <field id="carriers_hide" translate="label" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide Shipping Method(s)</label>
+                    <source_model>Magenizr\HideShippingMethod\Model\Adminhtml\Shipping\Config\Source\Allmethods</source_model>
+                    <comment>Select one or multiple shipping method(s) which should disappear. Default: No selection.</comment>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+                <field id="customer" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Customers Only</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Available for logged in customers only. Default: No.</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+                <field id="weekdays" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Weekdays</label>
+                    <source_model>Magenizr\HideShippingMethod\Model\Adminhtml\System\Config\Source\Weekdays</source_model>
+                    <comment>Hide a shipping method on specific weekdays only. Default: All weekdays.</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="date_start" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Start Date</label>
+                    <frontend_model>Magenizr\HideShippingMethod\Block\Adminhtml\System\Config\Field\DatePicker</frontend_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="date_end" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>End Date</label>
+                    <frontend_model>Magenizr\HideShippingMethod\Block\Adminhtml\System\Config\Field\DatePicker</frontend_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>

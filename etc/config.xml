@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magenizr HideShippingMethod
+ *
+ * @category    Magenizr
+ * @package     Magenizr_HideShippingMethod
+ * @copyright   Copyright (c) 2018 Magenizr (https://www.magenizr.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <checkout>
+            <magenizr_hideshippingmethod>
+                <enabled>0</enabled>
+                <carriers_hide></carriers_hide>
+                <customer>0</customer>
+                <weekdays>mon,tue,wed,thu,fri,sat,sun</weekdays>
+                <date_start></date_start>
+                <date_end></date_end>
+            </magenizr_hideshippingmethod>
+        </checkout>
+    </default>
+</config>

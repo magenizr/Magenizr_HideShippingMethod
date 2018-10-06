@@ -1,0 +1,13 @@
+<td>
+    <script type="text/javascript">
+        require(["jquery", "jquery/ui"], function (jq) {
+            jq(document).ready(function () {
+                jq("#<?php echo $block->getHtmlId(); ?>").datepicker( { dateFormat: "yy/mm/dd" } );
+                jq(".ui-datepicker-trigger").removeAttr("style");
+                jq(".ui-datepicker-trigger").click(function(){
+                    jq("#<?php echo $block->getHtmlId(); ?>").focus();
+                });
+            });
+        });
+    </script>
+</td>
