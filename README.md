@@ -9,7 +9,7 @@ Hide Shipping Method allows admin users to hide one or multiple shipping methods
 
 ## Features
 * With the option `Customers Only` the functionality can be restricted to logged in customers only.
-* The option `Weekdays`, `Start Date` and `End Date` information about the server environment such as memory and running tasks.
+* The option `Weekdays`, `Start Date` and `End Date` allows you to enable or disable shopping methods during a specific time window only.
 * The functionality can be restricted to specific roles via `System > Permissions > User Roles`. The ACL resource is `Stores > Configuration > Hide Shipping Method`.
 * The configuration can be found in `Stores > Configuration > Sales > Checkout > Hide Shipping Method`.
 
