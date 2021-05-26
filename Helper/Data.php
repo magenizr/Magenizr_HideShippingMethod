@@ -37,19 +37,18 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      * Data constructor.
      * @param \Magento\Framework\Stdlib\DateTime\TimezoneInterface $timezone
      * @param \Magento\Customer\Helper\Session\CurrentCustomer $session
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
      * @param \Magento\Shipping\Model\Config $shippingConfig
      */
     public function __construct(
+        \Magento\Framework\App\Helper\Context $context,
         \Magento\Framework\Stdlib\DateTime\TimezoneInterface $timezone,
         \Magento\Customer\Helper\Session\CurrentCustomer $session,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Shipping\Model\Config $shippingConfig
     ) {
-    
+        parent::__construct($context);
+
         $this->timezone = $timezone;
         $this->session = $session;
-        $this->scopeConfig = $scopeConfig;
         $this->shippingConfig = $shippingConfig;
     }
 
@@ -109,7 +108,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         }
 
         /**
-         * Check if start end is in range
+         * Check if end date is in range
          */
         if ($date_end && $date_end < $date_current) {
             return false;
@@ -133,13 +132,13 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
                 continue;
             }
 
-            $title = $this->scopeConfig->getValue('carriers/' . $carrierCode . '/title');
+            $title = $carrierModel->getConfigData('title');
 
             foreach ($carrierMethods as $methodCode => $method) {
                 $code = $carrierCode . '_' . $methodCode;
 
                 $methods[] = [
-                    'label' => $title,
+                    'label' => sprintf('%s (%s)', $title, $methodCode),
                     'value' => $code
                 ];
             }

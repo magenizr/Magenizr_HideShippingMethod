@@ -1,11 +1,7 @@
-# Magenizr Hide Shipping Method
+# Hide Shipping Method
 Hide Shipping Method allows admin users to hide one or multiple shipping methods on the cart and checkout page. This can be limited to specific weekdays, by start and end-date or customer sessions. 
 
-![Magenizr HideShippingMethod - Intro](http://download.magenizr.com/pub/magenizr_hideshippingmethod/all/intro.png?9213123)
-
-![Magenizr HideShippingMethod - Backend](http://download.magenizr.com/pub/magenizr_hideshippingmethod/all/product_01.png?9213123)
-
-![Magenizr HideShippingMethod - Backend](http://download.magenizr.com/pub/magenizr_hideshippingmethod/all/product_02.png?9213123)
+![Magenizr HideShippingMethod - Backend](https://images2.imgbox.com/8a/8b/Hxas4E4z_o.gif)
 
 ## Features
 * With the option `Customers Only` the functionality can be restricted to logged in customers only.
@@ -20,20 +16,20 @@ Go to `Stores > Configuration > Sales > Checkout > Hide Shipping Method`, enable
 This module is available for free on [GitHub](https://github.com/magenizr) or [Magento Marketplace](https://marketplace.magento.com/partner/magenizr).
 
 ## System Requirements
-* Magento 2.1.x, 2.2.x
+* Magento 2.1.x, 2.2.x, 2.3.x, 2.4.x
 * PHP 5.x, 7.x
 
 ## Installation (Composer)
 
-1. Add this extension to your repository `composer config repositories.magenizr/magento2-hideshippingmethod git https://github.com/magenizr/Magenizr_HideShippingMethod.git`
-2. Update your composer.json `composer require "magenizr/magento2-hideshippingmethod":"1.0.0"`
+1. Update your composer.json `composer require "magenizr/magento2-hideshippingmethod":"1.0.1" --no-update`
+2. Install dependencies and update your composer.lock `composer update --lock`
 
 ```
 ./composer.json has been updated
 Loading composer repositories with package information
 Updating dependencies (including require-dev)              
 Package operations: 1 install, 0 updates, 0 removals
-  - Installing magenizr/magento2-hideshippingmethod (1.0.0): Downloading (100%)         
+  - Installing magenizr/magento2-hideshippingmethod (1.0.1): Downloading (100%)         
 Writing lock file
 Generating autoload files
 ```
@@ -47,7 +43,7 @@ php bin/magento setup:upgrade
 
 ## Installation (Manually)
 1. Download the latest version of the source code.
-2. Extract the downloaded tar.gz file. Example: `tar -xzf Magenizr_HideShippingMethod_1.0.0.tar.gz`.
+2. Extract the downloaded tar.gz file. Example: `tar -xzf Magenizr_HideShippingMethod_1.0.1.tar.gz`.
 3. Copy the code into `./app/code/Magenizr/HideShippingMethod/`.
 4. Enable the module and clear static content.
 
@@ -63,6 +59,11 @@ If you have any issues with this extension, open an issue on [Github](https://gi
 Follow us on [GitHub](https://github.com/magenizr), [Twitter](https://twitter.com/magenizr) and [Facebook](https://www.facebook.com/magenizr).
 
 ## History
+===== 1.0.1 =====
+* Magento 2.4.x compatibility added
+* Composer.json cleanup
+* Add method code to dropdown option
+
 ===== 1.0.0 =====
 * Stable version
 
