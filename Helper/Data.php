@@ -34,7 +34,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     private $tab = 'checkout';
 
     /**
-     * Data constructor.
+     * Init Constructor
+     *
+     * @param \Magento\Framework\App\Helper\Context $context
      * @param \Magento\Framework\Stdlib\DateTime\TimezoneInterface $timezone
      * @param \Magento\Customer\Helper\Session\CurrentCustomer $session
      * @param \Magento\Shipping\Model\Config $shippingConfig
@@ -55,7 +57,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     /**
      * Get module configuration values from core_config_data
      *
-     * @param $setting
+     * @param string $setting
      * @return mixed
      */
     public function getConfig($setting)
@@ -73,9 +75,15 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isAvailable()
     {
-        $date_current = strtotime($this->timezone->formatDate());
-        $date_start = strtotime($this->getConfig('date_start'));
-        $date_end = strtotime($this->getConfig('date_end'));
+        $timezone = $this->timezone->getConfigTimezone();
+
+        $date_current = date_create('now', new \DateTimeZone($timezone))
+            ->getTimestamp();
+        $date_start = date_create($this->getConfig('date_start'), new \DateTimeZone($timezone))
+            ->getTimestamp();
+        $date_end = date_create($this->getConfig('date_end'), new \DateTimeZone($timezone))
+            ->getTimestamp();
+
         $weekdays = $this->getConfig('weekdays');
         $day = strtolower(date('D', $date_current));
 

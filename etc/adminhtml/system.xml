@@ -53,14 +53,14 @@
                         <field id="enabled">1</field>
                     </depends>
                 </field>
-                <field id="date_start" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="date_start" translate="label" type="date" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Start Date</label>
                     <frontend_model>Magenizr\HideShippingMethod\Block\Adminhtml\System\Config\Field\DatePicker</frontend_model>
                     <depends>
                         <field id="enabled">1</field>
                     </depends>
                 </field>
-                <field id="date_end" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="date_end" translate="label" type="date" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>End Date</label>
                     <frontend_model>Magenizr\HideShippingMethod\Block\Adminhtml\System\Config\Field\DatePicker</frontend_model>
                     <depends>

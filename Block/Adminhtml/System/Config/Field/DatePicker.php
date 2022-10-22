@@ -10,35 +10,45 @@
 
 namespace Magenizr\HideShippingMethod\Block\Adminhtml\System\Config\Field;
 
+use Magento\Framework\Registry;
+use Magento\Backend\Block\Template\Context;
+
 class DatePicker extends \Magento\Config\Block\System\Config\Form\Field
 {
 
-    const TEMPLATE_DATEPICKER = 'system/config/field/datepicker.phtml';
-
     /**
-     * @Override Title
+     * @var Registry
      */
-    // @codingStandardsIgnoreStart
-    protected function _prepareLayout()
-    {
-        $this->setTemplate(static::TEMPLATE_DATEPICKER);
-
-        return parent::_prepareLayout();
-    }
-    // @codingStandardsIgnoreEnd
+    protected $_coreRegistry;
 
     /**
-     * Return element html
+     * Init Constructor
      *
-     * @param  \Magento\Framework\Data\Form\Element\AbstractElement $element
-     * @return string
+     * @param Context $context
+     * @param Registry $coreRegistry
+     * @param array $data
      */
-    public function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement $element)
-    {
-        $this->addData([
-                'html_id' => $element->getHtmlId()
-            ]);
+    public function __construct(
+        Context  $context,
+        Registry $coreRegistry,
+        array    $data = []
+    ) {
+        $this->_coreRegistry = $coreRegistry;
+        parent::__construct($context, $data);
+    }
 
-        return $element->getElementHtml() . $this->toHtml();
+    /**
+     * Init Render
+     *
+     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * @return mixed
+     */
+    public function render(\Magento\Framework\Data\Form\Element\AbstractElement $element)
+    {
+        $element->setDateFormat(\Magento\Framework\Stdlib\DateTime::DATE_INTERNAL_FORMAT);
+        $element->setTimeFormat('HH:mm:ss'); //set date and time as per requirment
+        $element->setShowsTime(true);
+
+        return parent::render($element);
     }
 }

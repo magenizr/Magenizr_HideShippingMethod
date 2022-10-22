@@ -27,7 +27,8 @@ class Remove
     private $requestRate;
 
     /**
-     * Remove constructor.
+     * Init Constructor
+     *
      * @param \Magenizr\HideShippingMethod\Helper\Data $helper
      * @param RateRequest $requestRate
      */
@@ -52,8 +53,10 @@ class Remove
             return [$result];
         }
 
-        if ($this->helper->isAvailable()) {
-            $hideMethods = explode(',', $this->helper->getConfig('carriers_hide'));
+        $hideCarriers = $this->helper->getConfig('carriers_hide');
+
+        if ($this->helper->isAvailable() && !empty($hideCarriers)) {
+            $hideMethods = explode(',', $hideCarriers);
 
             $code = $result->getCarrier() . '_' . $result->getMethod();
 

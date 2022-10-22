@@ -2,7 +2,7 @@
   "name": "magenizr/magento2-hideshippingmethod",
   "description": "Hide Shipping Method allows admin users to hide one or multiple shipping methods on the cart and checkout page. This can be limited to specific weekdays, by start and end-date or customer sessions.",
   "type": "magento2-module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": [
     "OSL-3.0"
   ],
@@ -13,9 +13,6 @@
       "homepage": "https://www.magenizr.com"
     }
   ],
-  "require": {
-    "magento/framework": "^100|^101|^102|^103"
-  },
   "repositories": [
     {
       "type": "composer",

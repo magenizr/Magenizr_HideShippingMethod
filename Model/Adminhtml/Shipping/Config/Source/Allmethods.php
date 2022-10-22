@@ -18,6 +18,11 @@ class Allmethods implements \Magento\Framework\Option\ArrayInterface
      */
     private $helper;
 
+    /**
+     * Init Constructor
+     *
+     * @param \Magenizr\HideShippingMethod\Helper\Data $helper
+     */
     public function __construct(
         \Magenizr\HideShippingMethod\Helper\Data $helper
     ) {
