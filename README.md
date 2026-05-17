@@ -1,4 +1,3 @@
-[![Magenizr Plus](https://images2.imgbox.com/11/6b/yVOOloaA_o.gif)](https://account.magenizr.com)
 ---
 
 # Hide Shipping Method
