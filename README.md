@@ -15,9 +15,6 @@ Hide Shipping Method allows admin users to hide one or multiple shipping methods
 ## Usage
 Go to `Stores > Configuration > Sales > Checkout > Hide Shipping Method`, enable the feature and select at least one shipping method in section `Hide Shipping Method(s)`. Once the feature is enabled, the changes should have affect on the cart and checkout page.
 
-## Purchase
-This module is available for free on [GitHub](https://github.com/magenizr) or [Magento Marketplace](https://marketplace.magento.com/partner/magenizr).
-
 ## System Requirements
 * Magento 2.3.x, 2.4.x
 * PHP 5.x, 7.x
@@ -62,9 +59,6 @@ php bin/magento setup:upgrade
 ## Support
 If you have any issues with this extension, open an issue on [Github](https://github.com/magenizr/Magenizr_HideShippingMethod/issues).
 
-## Contact
-Follow us on [GitHub](https://github.com/magenizr), [Twitter](https://twitter.com/magenizr) and [Facebook](https://www.facebook.com/magenizr).
-
 ## History
 ===== 1.0.2 =====
 * Problem with timezones (strtotime) fixed
@@ -81,3 +75,13 @@ Follow us on [GitHub](https://github.com/magenizr), [Twitter](https://twitter.co
 
 ## License
 [OSL - Open Software Licence 3.0](http://opensource.org/licenses/osl-3.0.php)
+
+---
+
+## About [Magenizr](https://www.magenizr.com.au/)
+
+Built and maintained by [Magenizr](https://www.magenizr.com.au/) — an Australian [Adobe Commerce & Magento development agency](https://www.magenizr.com.au/services/adobe-commerce/) based in Bendigo, Victoria. We build custom Magento modules, handle platform migrations, and provide ongoing support for businesses across [Melbourne](https://www.magenizr.com.au/web-development-melbourne/), Sydney, Brisbane and the DACH region.
+
+- [Our Services](https://www.magenizr.com.au/services/adobe-commerce/) — Custom modules, migrations, support
+- [Book a Free Consultation](https://www.magenizr.com.au/book/) — 30-minute call, no obligation
+- [All Open-Source Modules](https://github.com/magenizr) — Our full collection on GitHub
