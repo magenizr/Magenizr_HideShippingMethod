@@ -1,5 +1,3 @@
----
-
 # Hide Shipping Method
 Hide Shipping Method allows admin users to hide one or multiple shipping methods on the cart and checkout page. This can be limited to specific weekdays, by start and end-date or customer sessions. 
 
